@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     group = request.args.get("group")
+    chart = request.args.get("chart", "behavior_comparison.png")
 
     df = pd.read_csv(r"C:\Users\mijaj\python\projects\student_performance_analyzer\student_data.csv")
 
@@ -28,11 +29,16 @@ def home():
         <button type="submit">Filter</button>
     </form>
 
+    <p>
+        <a href="/?chart=behavior_comparison.png">Behavior</a> |
+        <a href="/?chart=top_students.png">Top Students</a>
+    </p>
+
     <h3>Total Students: {len(filtered)}</h3>
     <h3>Average Score: {filtered['exam_score'].mean():.2f}</h3>
 
     <div style="display:flex; gap:20px;">
-        <img src="/static/behavior_comparison.png" width="650">
+        <img src="/static/{chart}" width="650">
         {filtered.head(20).to_html(index=False)}
     </div>
     """

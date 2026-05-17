@@ -1,0 +1,16 @@
+Student Performance Analysis Report
+
+             study_hours  ...  internet_usage
+score_group               ...                
+Poor                2.20  ...            7.30
+Average             3.27  ...            6.77
+Good                4.58  ...            6.45
+Excellent           7.25  ...            5.72
+
+[4 rows x 4 columns]
+
+Key Findings:
+- Study hours strongly influence performance
+- Attendance improves outcomes
+- High internet usage correlates negatively
+- Better students sleep slightly more
